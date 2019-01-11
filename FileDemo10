@@ -1,0 +1,24 @@
+package file;
+
+import java.io.File;
+import java.io.FileFilter;
+
+public class FileDemo10 {
+
+	public static void main(String[] args) {
+		/*
+		 * 有条件目录
+		 */
+		File file = new File("/home/soft01/demo8");
+		File[] files = file.listFiles(new FileFilter() {
+			public boolean accept(File file) {
+				String name = file.getName();
+				return name.endsWith(".txt");
+			}
+		});
+		for (File f : files) {
+			System.out.println(f);
+		}
+	}
+
+}
