@@ -1,0 +1,37 @@
+package file;
+
+import java.io.File;
+
+public class FileDemo07 {
+
+	public static void main(String[] args) {
+		/*
+		 * 删除文件
+		 * delete() 返回boolean类型的值，如果为true
+		 * 表示删除了文件，和纳会false 则删除失败
+		 * 如果文件已经不存在来，返回值也是false
+		 * 
+		 * 删除的是磁盘文件，删除后内存file对象还在！
+		 * 不确定磁盘文件是否已经删除，可以利用exists
+		 * 方法检查
+		 */
+		File file = new File("/home/soft01/demo/test");
+		boolean b = file.delete();
+		System.out.println(b);
+		System.out.println(file.exists());
+		
+		/*
+		 * 删除文件夹
+		 * delete()方法默认情况下只能删除空文件夹
+		 */
+		File test = new File("/home/soft01/demo");
+		File test1 = new File("/home/soft01/demo1");
+		System.out.println(test.exists()+","+test1.exists());
+		b = test.delete();
+		boolean b1 = test1.delete();
+		System.out.println(b+","+b1);
+		System.out.println(test.exists()+","+test1.exists());
+		
+	}
+
+}
