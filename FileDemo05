@@ -1,0 +1,16 @@
+import java.io.File;
+
+public class FileDemo05 {
+
+	public static void main(String[] args) {
+		/*
+		 * 检查文件长度
+		 * length()
+		 */
+		File file = new File("/home/soft01/wyh/资料/Untitled 1.odt");
+		long num = file.length();
+		System.out.println(num);
+
+	}
+
+}
