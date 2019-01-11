@@ -1,0 +1,29 @@
+package file;
+
+import java.io.File;
+
+public class FileDemo {
+
+	public static void main(String[] args) {
+		/**
+		 * File API
+		 * 创建File对象：
+		 *1.可以使用它绝对路径或者相对路径
+		 *2.路径分隔符
+		 *		-Windows系统是"\"	需要转义为\\
+		 *		-Java API中会自动的将爱将/处理为\\
+		 *		-Linux\Unix\Mac系统是“/” 
+		 *			-\称为反斜线，/称为斜线
+		 */
+		
+		//new File 只是常见内存对象，不会创建文件夹
+		//调用mkdir方法时候才创建文件夹
+		File file = new File("/home/soft01/demo");
+		
+		//mkdir()方法用于创建文件夹
+		//返回值为true，表示创建成功，否则失败
+		boolean b = file.mkdir();
+		System.out.println(b);
+	}
+
+}
