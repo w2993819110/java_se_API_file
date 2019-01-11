@@ -1,0 +1,33 @@
+package file;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileDemo04 {
+
+	public static void main(String[] args) throws IOException {
+		/*
+		 * File 可以代表文件、文件夹
+		 */
+		File file = new File("/home/soft01/abc");
+		File file1 = new File("/home/soft01/wyh/资料/Untitled 1.odt");
+//		file.mkdir();
+//		file.createNewFile();
+		/*
+		 * File 提供了方法，检查file对象是文件
+		 * 还是文件夹
+		 * 1.如果文件不存在，isFile() isDirectory()
+		 * 	都返回false
+		 * 2.如果存在：
+		 * 	1.如果被检查目标是文件夹，则isDirectory()
+		 * 		返回ture		isFile()返回false
+		 * 	2.如果被检查的目标是文件，则isDirectory()
+		 * 		返回false	isFile()返回ture
+		 */
+		boolean b1 = file.isFile();
+		boolean b2 =	file.isDirectory();
+		long b3 = file1.length();
+		System.out.println(b1+","+b2+","+b3);
+	}
+
+}
