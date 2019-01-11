@@ -1,0 +1,41 @@
+package file;
+
+import java.io.File;
+
+public class FileDemo11 {
+
+	public static void main(String[] args) {
+		/*
+		 * 递归删除文件
+		 * 
+		 * 关于递归：
+		 * 1.递归必须能够收敛结束
+		 * 	-不能进行无限度递归，必须能够结束
+		 * 	-避免递归层次太深
+		 * 2.递归画繁为简的解决问题，只需要考虑一层
+		 */
+		File file = new File("/home/soft01/demo9");
+		del(file);
+	}
+	
+	/**
+	 * 递归删除文件
+	 */
+	public static void del(File file) {
+		//检查参数file的类型，
+		//1如果是文件夹，则先删除文件夹的内容，然后在删除文件夹。
+		//2.如果不是文件夹则自己删除文件
+		if(file.isDirectory()) {
+			//删除文件夹的内容
+			File[] files = file.listFiles();
+			for (File f : files) {
+				//利用递归复用当前方法，删除子文件夹、文件
+				del(f);
+			}
+		}
+		//删除文件夹或者文件
+		System.out.println(file);
+		file.delete();
+	}
+
+}
