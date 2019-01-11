@@ -1,0 +1,26 @@
+package file;
+
+import java.io.File;
+
+public class FileDemo08 {
+
+	public static void main(String[] args) {
+		/*
+		 * 列出文件夹的内容 listFiles
+		 * 1.必须在文件夹上调用此方法，如果在文件上调用
+		 * 此方法则返回空值null
+		 * 2.返回值是文件夹中的内容，就是文件夹中的文件
+		 * 和子文件夹，返回值类型是File[]数组
+		 */
+		File dir = new File("/home/soft01/demo8");
+		//列出dir的内容
+		File[] files = dir.listFiles();
+//		for(int i = 0 ; i<files.length ; i++) {
+//			File file = files[i];
+		for(File file:files) {
+			System.out.println(file);
+		}
+	}
+	
+
+}
