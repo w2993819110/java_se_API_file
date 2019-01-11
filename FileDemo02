@@ -1,0 +1,23 @@
+package file;
+
+import java.io.File;
+
+public class FileDemo02 {
+
+	public static void main(String[] args) {
+		/**
+		 * 检查文件（文件夹）是否存在
+		 */
+		File file1 = new File("/home/soft01/demo");
+		File file2 = new File("/home/soft01/demo1");
+		/**
+		 * File 提供了API方法exists()检查文件
+		 * 或文件夹是否已经存在
+		 * 返回true则存在，false不存在
+		 */
+		boolean b1 = file1.exists();
+		boolean b2 = file2.exists();
+		System.out.println(b1+","+b2);
+	}
+
+}
